@@ -2,19 +2,20 @@ import { RouterProvider, createBrowserRouter, createHashRouter } from 'react-rou
 import './App.css';
 import Api from './Components/Api/Api';
 import Home from './Components/Home/Home';
-import NavBar from './Components/navbar/NavBar';
 import Layout from './Components/Layout/Layout';
+import NotFound from './Components/NotFound/NotFound';
 
 let routers = createHashRouter([{
   path: "", element:<Layout/>,children:[
     {index:true, element:<Home/>},
-    {path: 'api', element:<Api/>}
+    {path: 'api', element:<Api/>},
+    {path: '*', element:<NotFound/>}
   ]
 }])
 
 function App() {
   return <>
-    <RouterProvider router={routers}></RouterProvider>
+    <RouterProvider router={routers}/>
   </>;
 }
 
