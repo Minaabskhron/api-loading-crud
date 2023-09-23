@@ -30,8 +30,7 @@ export default function Home() {
     }
 
 
-  return (
-    <>
+  return <>
       <section className="container">
         <div>
           <div className="pt-3">
@@ -74,6 +73,6 @@ export default function Home() {
         </div>
       </section>
     </>
-  );
+  ;
   
 }

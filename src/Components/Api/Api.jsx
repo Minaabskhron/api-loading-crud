@@ -18,8 +18,7 @@ export default function Api(props) {
 
     useEffect(()=>{getTrendingMovies()},[])
 
-    return (
-        <>
+    return <>
             <div className="container pt-5">
                 <div className="row">
                     {loadingDone? trendingMovies.map((movie,index)=>
@@ -35,5 +34,5 @@ export default function Api(props) {
                 </div>
             </div>
         </>
-    )
+    
 }

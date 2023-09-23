@@ -13,9 +13,9 @@ let routers = createHashRouter([{
 }])
 
 function App() {
-  return (<>
+  return <>
     <RouterProvider router={routers}></RouterProvider>
-  </>);
+  </>;
 }
 
 export default App;
