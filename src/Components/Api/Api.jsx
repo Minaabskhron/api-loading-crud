@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react"
-import "./Api.css"
+import Movie from "../Movie/Movie";
+import Loading from "../Loading/Loading";
 
 export default function Api(props) {
     
@@ -22,15 +23,9 @@ export default function Api(props) {
             <div className="container pt-5">
                 <div className="row">
                     {loadingDone? trendingMovies.map((movie,index)=>
-                        <div className="col-md-3" key={index}>
-                            <figure>
-                                <img src={"https://image.tmdb.org/t/p/w500/"+ movie.poster_path} alt="" className="w-100" />
-                                <figcaption className="text-center">{movie.title}</figcaption>
-                            </figure>
-                        </div>
-                    ): <div className="background position-fixed top-0 bottom-0 start-0 end-0 d-flex justify-content-center align-items-center">
-                        <i className="fa-solid fa-spinner fa-spin fa-2xl"></i>
-                    </div>  } 
+                    <Movie key={index} movie={movie} />
+
+                    ): <Loading/> } 
                 </div>
             </div>
         </>
